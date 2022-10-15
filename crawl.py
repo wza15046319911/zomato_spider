@@ -87,6 +87,7 @@ def get_coordinates(session):
                 image = search_result["info"]["image"]["url"]
                 rating = search_result["info"]["rating"]["aggregate_rating"]
                 url = ROOT_URL + click_url
+                print(f"Requesting info page for: {restaurant_name}")
                 response = session.get(url=url)
                 content = response.text
                 soup = bs(content, "html.parser")
